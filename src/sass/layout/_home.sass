@@ -1,0 +1,297 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.aboutHome
+    grid-gap: 20px
+    display: grid
+    padding: 50px 0 20px 0
+    justify-content: center
+    grid-template-columns: 35% 50%
+    grid-template-rows: minmax(70px, max-content)
+    @include breakpoint($screen_large)
+        grid-template-columns: 40% 60%
+    @include breakpoint($screen_medium)
+        grid-gap: 0
+    figure
+        height: 450px
+        position: relative
+        grid-area: 1 / 1 / 3 / 2
+        @include breakpoint($screen_medium)
+            grid-area: 1 / 1 / 2 / 3
+        &::before
+            left: 85px
+            content: ''
+            width: 30px
+            height: 90px
+            bottom: -30px
+            position: absolute
+            z-index: $index_small
+            background: $ecs_blue
+        &::after
+            content: ''
+            left: 30px
+            width: 70px
+            bottom: -15px
+            height: 124px
+            position: absolute
+            background: $ecs_gray
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+        figcaption
+            top: -20px
+            right: 30px
+            width: 150px
+            height: 250px
+            text-align: center
+            position: absolute
+            z-index: $index_small
+            background: #41afDB50
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 50%)
+            h3
+                color: $white
+                font-size: 5em
+                font-weight: 900
+                margin-top: 30px
+            p
+                color: $white
+                font-weight: 500
+                font-size: 1.1em
+                text-align: right
+                margin-top: -23px
+                margin-right: 33px
+                text-transform: capitalize
+    header
+        position: relative
+        grid-area: 1 / 2 / 2 / 3
+        @include breakpoint($screen_medium)
+            margin: 40px 0 5px 0
+            grid-area: 2 / 1 / 3 / 3
+        @include breakpoint($screen_xmedium)
+            margin-bottom: 20px
+        h2
+            font-size: 2em
+            font-weight: 900
+            color: $ecs_blue
+            position: relative
+            text-transform: uppercase
+            @include breakpoint($screen_small)
+                font-size: 1.3em
+        p
+            font-size: 1.5em
+            font-weight: 600
+            color: $ecs_blue
+            text-transform: capitalize
+            @include breakpoint($screen_xmedium)
+                font-size: 1.1em
+            &::before
+                left: 0
+                width: 45px
+                height: 4px
+                content: ''
+                bottom: -10px
+                position: absolute
+                background: $ecs_blue
+            &::after
+                width: 45px
+                height: 4px
+                content: ''
+                left: 50px
+                bottom: -10px
+                position: absolute
+                background: $ecs_gray
+    .aboutContent
+        grid-area: 2 / 2 / 3 / 3
+        @include breakpoint($screen_medium)
+            grid-area: 3 / 1 / 4 / 3
+        p
+            font-weight: 300
+            font-size: 1em
+            color: $ecs_gray_dark
+        .assinatura
+            padding: 20px
+            font-weight: 100
+            font-style: italic
+            @include breakpoint($screen_xlarge)
+                padding: 25px
+        .aboutValue
+            height: 125px
+            display: flex
+            overflow: hidden
+            position: relative
+            background: $white
+            @include round(5px)
+            align-items: center
+            flex-direction: column
+            justify-content: center
+            box-shadow: 4px 7px 15px #aaa
+            @include box(12, $ecs_blue_sky, 20px, 0px)
+            padding: 15px
+            @include breakpoint($screen_large)
+                height: 150px
+            @include breakpoint($screen_xlarge)
+                height: 180px
+                margin-bottom: 5px
+            @include breakpoint($screen_small)
+                height: 200px
+            .vAbout
+                width: 95%
+                opacity: 0
+                position: absolute
+                transform: translateX(110%)
+                transition: all 0.5s ease
+                h3
+                    font-size: 1.5em
+                    font-weight: 900
+                    color: $ecs_blue
+                    text-transform: capitalize
+                p
+                    color: $ecs_gray
+                    @include breakpoint($screen_xlarge)
+                        font-size: .9em
+            .active_vAbout
+                opacity: 1
+                transform: translateX(0)
+                transition: all 0.5s ease
+.whoUs
+    display: flex
+    flex-wrap: wrap
+    padding: 40px 0 0 0
+    overflow: hidden
+    position: relative
+    align-items: center
+    justify-content: flex-end
+    @include breakpoint($screen_medium)
+        justify-content: center
+    .us
+        left: 0px
+        position: absolute
+        transform: translateY(360px)
+        transition: all 0.5s ease-in-out
+        @include box(6, $white, 10px, 10px)
+        @include breakpoint($screen_extral_large)
+            transform: translateY(410px)
+        @include breakpoint($screen_large)
+            left: 30px
+            transform: translateY(390px)
+            @include box(5, $white, 10px, 10px)
+        @include breakpoint($screen_xlarge)
+            left: 0
+            @include box(9, $white, 10px, 10px)
+        @include breakpoint($screen_medium)
+            top: 180px
+            z-index: $index_small
+            transform: translateY(200px)
+            @include box(12, $white, 10px, 10px)
+        @include breakpoint($screen_small)
+            top: 120px
+        @include breakpoint($screen_xsmall)
+            top: 150px
+        header
+            h3
+                font-size: 1.3em
+                font-weight: 700
+                margin-bottom: 30px
+                color: $ecs_blue_sky
+                @include breakpoint($screen_medium)
+                    font-size: 1.1em
+            h3::first-letter
+                font-size: 2.5em
+                font-weight: 900
+                color: $ecs_blue
+                padding-bottom: 2px
+                text-transform: uppercase
+                border-bottom: 4px solid $ecs_blue
+                @include breakpoint($screen_medium)
+                    font-size: 2em
+        p
+            color: $ecs_gray
+            font-size: 1.2em
+            font-weight: 300
+            @include breakpoint($screen_medium)
+                font-size: 1.1em
+    .active_us
+        display: block
+        transform: translateY(0)
+        transition: all 0.5s ease-in-out
+    .asideWhoUs
+        display: flex
+        align-items: center
+        z-index: $index_medium
+        flex-direction: column
+        justify-content: center
+        @include box(6, $white, 10px, 10px)
+        @include breakpoint($screen_extral_large)
+            margin-right: 0
+        @include breakpoint($screen_large)
+            @include box(6, $white, 10px, 10px)
+        @include breakpoint($screen_xlarge)
+            @include box(2, $white, 10px, 10px)
+        @include breakpoint($screen_medium)
+            flex-direction: row
+            @include box(12, $white, 0, 10px)
+            margin-top: 150px
+        .boxAsideUS
+            width: 100%
+            padding: 10px
+            display: grid
+            grid-gap: 5px
+            margin: 10px 0
+            cursor: pointer
+            @include round(5px)
+            align-items: center
+            justify-content: center
+            grid-template-columns: 30% 70%
+            box-shadow: 2px 3px 10px $ecs_light_gray
+            grid-template-rows: minmax(20px, max-content)
+            @include breakpoint($screen_medium)
+                width: 25%
+            figure
+                display: flex
+                align-items: center
+                justify-content: center
+                grid-area: 1 / 1 / 3 / 2
+                @include breakpoint($screen_xlarge)
+                    grid-area: 1 / 1 / 3 / 3
+                img
+                    width: 65px
+                    height: 100%
+                    @include breakpoint($screen_xlarge)
+                        width: 35px
+            h5
+                padding: 0 5px
+                font-size: 1.1em
+                font-weight: 700
+                color: $ecs_gray
+                text-transform: capitalize
+                grid-area: 1 / 2 / 2 / 3
+                @include breakpoint($screen_xlarge)
+                    display: none
+            p
+                padding: 0 5px
+                font-size: .9em
+                color: $ecs_gray
+                font-weight: 300
+                grid-area: 2 / 2 / 3 / 3
+                @include breakpoint($screen_xlarge)
+                    display: none
+        .active_boxAsideUS
+            box-shadow: 4px 7px 15px $ecs_gray
+.client
+    display: flex
+    padding: 50px 20px
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+    figure
+        height: 150px
+        @include round(10px)
+        @include box(3, transparent, 10px, 10px)
+        @include breakpoint($screen_xlarge)
+            @include box(4, transparent, 10px, 10px)
+        @include breakpoint($screen_medium)
+            @include box(6, transparent, 10px, 10px)
+        @include breakpoint($screen_xmedium)
+            @include box(12, transparent, 10px, 10px)

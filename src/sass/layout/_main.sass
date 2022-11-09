@@ -1,0 +1,946 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.main
+    width: 100%
+    max-width: 1366px
+    background: $white
+    overflow-x: hidden
+    .banner
+        width: 100%
+        height: 100vh
+        position: relative
+        z-index: $index_small
+        transition: background 0.5s linear ease-in-out
+        @include background_image("text.jpeg")
+        clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 60% 90%, 55% 100%, 0 100%)
+        @include breakpoint($screen_extral_large)
+            height: 80vh
+        @include breakpoint($screen_large)
+            height: 45vh
+        @include breakpoint($screen_xlarge)
+            height: 50vh
+        @include breakpoint($screen_medium)
+            height: 56vh
+        @include breakpoint($screen_small)
+            height: 72vh
+        @include breakpoint($screen_xsmall)
+            height: 87vh
+        &::after
+            top: 0
+            left: 0
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            z-index: $index_small
+            background: #00000041
+        .bannerContainer
+            height: 100%
+            display: flex
+            position: relative
+            align-items: center
+            justify-content: flex-start
+            .boxContent
+                left: 0
+                height: 250px
+                z-index: $index_medium
+                position: absolute
+                top: calc( 50% - 125px)
+                @include box(5, transparent, 10px, 10px)
+                padding: 0
+                margin: 0
+                @include breakpoint($screen_extral_large)
+                    @include box(8, transparent, 10px, 10px)
+                @include breakpoint($screen_large)
+                    @include box(12, transparent, 10px, 10px)
+                .headerContent
+                    padding: 20px 0
+                    justify-content: flex-start
+                    h1
+                        width: 100%
+                        color: $white
+                        font-size: 2.2em
+                        text-align: left
+                        font-weight: 900
+                        text-transform: uppercase
+                        @include breakpoint($screen_medium)
+                            font-size: 1.9em
+                        @include breakpoint($screen_xmedium)
+                            font-size: 1.6em
+                        @include breakpoint($screen_xsmall)
+                            font-size: 1.2em
+                    p
+                        width: 100%
+                        color: $white
+                        text-align: left
+                        position: relative
+                        @include breakpoint($screen_xlarge)
+                            font-size: 1.1em
+                        @include breakpoint($screen_xmedium)
+                            font-size: 1em
+                        @include breakpoint($screen_small)
+                            font-size: .9em
+                        &::after
+                            left: 50px
+                            width: 45px
+                            height: 4px
+                            content: ''
+                            bottom: -10px
+                            position: absolute
+                            background: $ecs_gray
+                        &::before
+                            left: 0
+                            width: 45px
+                            height: 4px
+                            content: ''
+                            bottom: -10px
+                            position: absolute
+                            background: $ecs_blue
+                .text
+                    padding-right: 190px
+                    margin-bottom: 15px
+                    color: $ecs_blue_light
+                    @include breakpoint($screen_xlarge)
+                        padding-right: 90px
+                    @include breakpoint($screen_medium)
+                        padding-right: 50px
+                    @include breakpoint($screen_xmedium)
+                        font-size: .9em
+    .contentService
+        display: flex
+        flex-wrap: wrap
+        position: relative
+        align-items: center
+        margin-bottom: 50px
+        justify-content: center
+        .serviceIcon
+            width: 100%
+            padding: 50px
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: center
+            @include breakpoint($screen_xlarge)
+                padding: 30px 0
+            figure
+                display: flex
+                height: 150px
+                @include round(5px)
+                align-items: center
+                justify-content: center
+                box-shadow: 4px 7px 15px #aaa
+                @include box(4, $white, 10px, 10px)
+                @include breakpoint($screen_large)
+                    @include box(6, $white, 2px, -(-4px))
+                @include breakpoint($screen_xlarge)
+                    @include box(6, $white, 10px, 10px)
+                @include breakpoint($screen_medium)
+                    @include box(12, $white, 10px, 0px)
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+        .cardService
+            height: 420px
+            cursor: pointer
+            overflow: hidden
+            position: relative
+            transition: all 0.5s ease
+            @include box(4, $ecs_blue_sky, 50px, 20px)
+            margin-bottom: 90px
+            &:hover
+                transition: all 0.5s ease
+                transform: translateY(-20px)
+                box-shadow: 4px 7px 20px $ecs_blue
+                &::after
+                    background: $white
+                &::before
+                    background: $white
+                figure
+                    transform: rotate(-360deg)
+                    border-color: transparent $ecs_blue transparent transparent
+                    &::after
+                        transform: rotate(0deg)
+                        background: $white
+                .cardContent
+                    p
+                        font-weight: 700
+                        font-size: 1em
+                        color: $ecs_gray_dark
+                        transition: all 0.5 ease-in-out
+                header
+                    h3
+                        color: $white
+                    div
+                        margin-top: 12%
+                        margin-left: 79%
+                        position: relative
+                        z-index: $index_xsmall
+                        transform: scale(4, 4)
+                        background: $ecs_blue
+                        border: 4px double $ecs_blue_sky
+                        p
+                            top: 2px
+                            left: 20px
+                            font-size: 2em
+                            position: absolute
+                            color: #33333322
+            &::before
+                left: -1px
+                content: ''
+                width: 86px
+                bottom: 42px
+                height: 168px
+                position: absolute
+                transition: all 0.5s ease
+                background: $ecs_blue
+                clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 0% 95%, 90% 50%, 0% 5%)
+            &::after
+                left: -17px
+                content: ''
+                width: 86px
+                bottom: -20px
+                height: 168px
+                position: absolute
+                background: $ecs_blue
+                transition: all 0.5s ease
+                clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 0% 95%, 90% 50%, 0% 5%)
+            @include breakpoint($screen_large)
+                @include box(6, $ecs_blue_sky, 20px, 10px)
+            @include breakpoint($screen_medium)
+                @include box(12, $ecs_blue_sky, 20px, 10px)
+            header
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 145px
+                position: absolute
+                h3
+                    font-weight: 900
+                    font-size: 1em
+                    margin-left: 20%
+                    margin-top: 45px
+                    color: $ecs_blue
+                    z-index: $index_small
+                    text-transform: capitalize
+                    transition: all 0.5s ease
+                div
+                    margin-top: 10%
+                    margin-left: 80%
+                    position: relative
+                    background: $white
+                    border: 4px double $white
+                    transition: all 0.5s ease-in-out
+                    @include round_content(100px, true)
+                    p
+                        top: 6px
+                        left: 25px
+                        font-size: 2em
+                        font-weight: 900
+                        color: $ecs_blue
+                        position: absolute
+                        transition: all 0.5s ease
+            .cardContent
+                left: 0
+                width: 100%
+                position: absolute
+                padding: 1px -21px
+                z-index: $index_medium
+                transition: all 0.5s ease
+                p
+                    font-size: .9em
+                    font-weight: 100
+                    font-weight: 300
+                    text-align: center
+                    transition: all 0.5 ease-in-out
+                    color: $ecs_gray_dark
+            figure
+                display: flex
+                border-width: 4px
+                margin: 10px auto
+                position: relative
+                align-items: center
+                border-style: solid
+                justify-content: center
+                background: transparent
+                transition: all 0.5s ease
+                @include round_content(140px, true)
+                border-color: transparent $ecs_blue transparent transparent
+                &::after
+                    content: ''
+                    position: absolute
+                    z-index: $index_small
+                    left: calc( 50% - 60px )
+                    top: calc( 50% - 60px )
+                    background: $ecs_blue
+                    @include round_content(120px, true)
+                    transition: background 0.5s ease-in-out
+                img
+                    object-fit: cover
+                    z-index: $index_medium
+                    @include round_content(60%, true)
+        .btn_ecs
+            bottom: 0
+            position: absolute
+            left: calc(50% - 73px)
+            @include breakpoint($screen_xlarge)
+                bottom: -33px
+    .homeForm
+        width: 100%
+        height: 600px
+        position: relative
+        @include background_image("quotation.webp")
+        background-attachment: fixed
+        &::after
+            top: 0
+            right: 0
+            width: 50%
+            content: ''
+            height: 100%
+            position: absolute
+            z-index: $index_small
+            background: #41afdb50
+            @include breakpoint($screen_extral_large)
+                width: 35%
+            @include breakpoint($screen_large)
+                width: 20%
+            @include breakpoint($screen_xlarge)
+                width: 0
+        .formContent
+            height: 100%
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: flex-start
+            .asideNav
+                height: 80%
+                @include round(5px)
+                box-shadow: 2px 3px 7px rgba(255, 255, 255, 0.3)
+                @include box(1.3, $ecs_blue, 0, 0px)
+                @include breakpoint($screen_large)
+                    @include box(2, $ecs_blue, 0, 0px)
+                @include breakpoint($screen_medium)
+                    height: 100px
+                    @include box(12, $ecs_blue, 0, 0px)
+                .navAside
+                    width: 100%
+                    height: 100%
+                    display: flex
+                    @include round(5px)
+                    align-items: center
+                    flex-direction: column
+                    justify-content: center
+                    @include breakpoint($screen_medium)
+                        flex-direction: row
+                    a
+                        width: 100%
+                        display: flex
+                        color: $white
+                        margin: 7px 0
+                        padding: 20px 0
+                        font-size: .7em
+                        font-weight: 900
+                        text-align: center
+                        align-items: center
+                        @include round(7px)
+                        flex-direction: column
+                        justify-content: center
+                        text-transform: capitalize
+                        transition: all 0.5s ease-in-out
+                        &:hover
+                            color: $ecs_blue
+                            @include round(7px)
+                            background: $white
+                            transform: translateY(-3px)
+                            transition: all 0.5s ease-in-out
+                            box-shadow: 4px 7px 10px $ecs_blue_dark
+                    .active_fHome
+                        color: $ecs_blue
+                        @include round(7px)
+                        background: $white
+                        transform: translateY(-3px)
+                        transition: all 0.5s ease-in-out
+                        box-shadow: 4px 7px 10px $ecs_blue_dark
+            .boxForm
+                height: 75%
+                display: flex
+                overflow-x: hidden
+                overflow-y: auto
+                position: relative
+                padding-bottom: 20px
+                align-items: center
+                z-index: $index_medium
+                justify-content: flex-start
+                @include box(5, rgba(255, 255, 255, 0.3), 0px, 0px)
+                @include breakpoint($screen_extral_large)
+                    @include box(7, rgba(255, 255, 255, 0.3), 0px, 0px)
+                    padding: 0
+                @include breakpoint($screen_large)
+                    @include box(8, rgba(255, 255, 255, 0.3), 0px, 0px)
+                @include breakpoint($screen_xlarge)
+                    @include box(10, rgba(255, 255, 255, 0.3), 0px, 0px)
+                @include breakpoint($screen_medium)
+                    @include box(12, rgba(255, 255, 255, 0.3), 0px, 0px)
+                .a_form
+                    position: absolute
+                    transform: translateX(-110%)
+                    transition: all 0.5s ease-in-out
+                .form_active
+                    transform: translateX(0)
+                    transition: all 0.5s ease-in-out
+                .form,
+                .address
+                    width: 90%
+                    padding: 0 20px
+                .formQuote
+                    gap: 5
+                    top: 5px
+                    padding: 0
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    h4
+                        width: 100%
+                        padding: 10px 0
+                        margin-left: 5px
+                        color: $ecs_gray_dark
+                        text-transform: capitalize
+                    p
+                        @include box(6, transparent, 5px, 5px)
+                        padding: 0
+                        select
+                            transition: all 0.5s ease-in-out
+                            option
+                                font-size: .8em
+                                font-weight: 300
+                                text-align: left
+                                color: $ecs_blue
+                                text-transform: capitalize
+                    .inBox
+                        position: relative
+                        @include box(3, transparent, 5px, 0px)
+                        &:hover
+                            &::before
+                                visibility: visible
+                                transition: all 0.5s ease-in-out
+                        &::before
+                            top: 51px
+                            width: 74%
+                            height: 10px
+                            padding: 5px
+                            color: $white
+                            display: flex
+                            font-size: .7em
+                            position: absolute
+                            visibility: hidden
+                            align-items: center
+                            justify-content: center
+                            text-transform: capitalize
+                            background: $ecs_gray_dark
+                            transition: all 0.5s ease-in-out
+                    .peso
+                        &::before
+                            content: 'peso'
+                    .largura
+                        &::before
+                            content: 'largura'
+                    .comprimento
+                        &::before
+                            content: 'comprimento'
+                    .altura
+                        &::before
+                            content: 'altura'
+                    textarea
+                        margin: 10px 5px
+                .registration
+                    gap: 5
+                    top: 5px
+                    padding: 0
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    h4
+                        width: 100%
+                        padding: 10px 0
+                        margin-left: 5px
+                        color: $ecs_gray_dark
+                        text-transform: capitalize
+                    p
+                        @include box(6, transparent, 5px, 5px)
+                        padding: 0
+            figure
+                display: flex
+                position: absolute
+                background: $white
+                align-items: center
+                top: calc(50% - 50px)
+                left: calc(50% - 50px)
+                z-index: $index_medium
+                justify-content: center
+                @include round_content(90px, true)
+                @include breakpoint($screen_extral_large)
+                    left: 60.1%
+                @include breakpoint($screen_large)
+                    left: 74.5%
+                @include breakpoint($screen_xlarge)
+                    left: 91%
+                    @include round_content(60px, true)
+                @include breakpoint($screen_medium)
+                    top: 87%
+                    left: calc(50% - 30px)
+                img
+                    @include round_content(90px, true)
+                    @include breakpoint($screen_xlarge)
+                        @include round_content(60px, true)
+    .headerContent
+        width: 100%
+        padding: 0 20px 30px 20px
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        h2
+            width: 60%
+            font-size: 2em
+            font-weight: 900
+            color: $ecs_blue
+            text-align: center
+            text-transform: uppercase
+            @include breakpoint($screen_extral_large)
+                width: 100%
+            @include breakpoint($screen_small)
+                font-size: 1.3em
+        p
+            width: 60%
+            font-size: 1em
+            font-weight: 100
+            color: $ecs_gray
+            text-align: center
+            position: relative
+            text-transform: capitalize
+            @include breakpoint($screen_extral_large)
+                width: 100%
+            @include breakpoint($screen_xlarge)
+                font-size: 1.3em
+            @include breakpoint($screen_medium)
+                text-align: left
+            @include breakpoint($screen_xmedium)
+                font-size: 1.1em
+            @include breakpoint($screen_small)
+                font-size: 1em
+            &::before
+                width: 45px
+                height: 4px
+                content: ''
+                bottom: -10px
+                position: absolute
+                left: calc(50% - 50px)
+                background: $ecs_blue
+                @include breakpoint($screen_medium)
+                    left: 0
+            &::after
+                width: 45px
+                height: 4px
+                content: ''
+                bottom: -10px
+                position: absolute
+                right: calc(50% - 50px)
+                background: $ecs_gray
+                @include breakpoint($screen_medium)
+                    right: calc(100% - 100px)
+            strong
+                color: $ecs_blue
+    .faqContainer
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        padding: 20px 0
+        .faq
+            cursor: pointer
+            transition: all 0.5s ease
+            border: 1px solid $ecs_blue
+            @include box(4.5, $white, 10px, 10px)
+            @include breakpoint($screen_large)
+                @include box(6, $white, 10px, 10px)
+            @include breakpoint($screen_xlarge)
+                @include box(10, $white, 10px, 10px)
+            @include breakpoint($screen_small)
+                @include box(12, $white, 10px, 10px)
+            &:hover
+                transition: all 0.5s ease
+                box-shadow: 4px 7px 10px $ecs_gray
+                h2
+                    color: $ecs_gray_dark
+                    &::before
+                        color: $ecs_gray_dark
+            header
+                width: 100%
+                height: 30px
+                display: flex
+                align-items: center
+                h2
+                    width: 100%
+                    font-size: 1em
+                    display: flex
+                    color: $ecs_gray
+                    font-weight: bold
+                    position: relative
+                    line-height: 30px
+                    align-items: center
+                    transition: all 0.5s ease
+                    justify-content: flex-start
+                    text-transform: capitalize
+                    @include breakpoint($screen_medium)
+                        font-size: .9em
+                    @include breakpoint($screen_small)
+                        line-height: 2
+                    @include breakpoint($screen_xsmall)
+                        line-height: 1
+                    &::before
+                        right: 0
+                        content: '+'
+                        font-size: 2em
+                        color: $ecs_gray
+                        position: absolute
+                        transition: all 0.5s
+            .faqContent
+                height: 0
+                width: 100%
+                overflow: hidden
+                background: $ecs_blue
+                transition: all 0.5s ease
+                p
+                    margin: 10px
+                    color: $white
+                    font-size: 1em
+                    font-weight: 100
+        .faq_active
+            header
+                h2
+                    &::before
+                        content: '-'
+                        transition: all 0.5s ease
+            .faqContent
+                height: 250px
+                padding: 20px
+                margin-top: 10px
+                transition: all 0.5s ease
+                @include breakpoint($screen_xmedium)
+                    height: 200px
+.news
+    padding: 40px 0
+    margin-bottom: 20px
+    @include round(10px)
+    background: $ecs_blue_sky
+    .headerContent
+        h2
+            &::after
+                background: $white
+        p
+            font-weight: 100
+            font-size: 1em
+            color: $ecs_gray
+    .form
+        width: 80%
+        display: flex
+        margin: 0 auto
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        p
+            @include box(4, transparent, 0px, 0px)
+            @include breakpoint($screen_xlarge)
+                @include box(12, transparent, 0px, 0px)
+        button
+            font-size: .9em
+            margin-bottom: 0
+.form
+    @include box(5, transparent, 10px, 10px)
+    @include breakpoint($screen_large)
+        @include box(6, transparent, 10px, 10px)
+    @include breakpoint($screen_xlarge)
+        @include box(12, transparent, 10px, 10px)
+    p
+        width: 100%
+        margin: 10px 0
+        input,
+        select
+            width: 100%
+            padding: 7px 15px
+            color: $ecs_gray
+            text-transform: capitalize
+            transition: all 0.5s ease
+            border: 1px solid $ecs_gray
+            &::placeholder
+                font-size: .8em
+                font-weight: 300
+                text-align: left
+                color: $ecs_blue
+                text-transform: capitalize
+            &:hover
+                color: $ecs_gray
+                transition: all 0.5s ease
+                border: 1px solid $ecs_blue
+            &:focus
+                border: .5em solid $ecs_blue
+        input[type="email"]
+            text-transform: lowercase
+    textarea
+        width: 100%
+        padding: 7px 15px
+        margin-bottom: 15px
+        text-transform: capitalize
+        transition: all 0.5s ease
+        border: 1px solid $ecs_gray
+        &::placeholder
+            font-size: 1em
+            color: $ecs_blue
+            font-weight: 100
+            text-align: left
+            text-transform: capitalize
+        &:hover
+            border: 1px solid $ecs_blue
+        &:focus
+            border: .5em solid $ecs_blue
+    button
+        margin-left: 5px
+        margin-bottom: 10px
+.paginator
+    height: 20vh
+    display: flex
+    margin: 20px 0
+    align-items: center
+    justify-content: center
+    @include box(12, transparent, 5px, 5px)
+    margin-bottom: 0
+    padding-bottom: 0
+    a,
+    span
+        width: 40px
+        margin: 5px
+        height: 40px
+        display: flex
+        font-size: 1em
+        font-weight: 900
+        align-items: center
+        background: $ecs_gray
+        color: $ecs_blue_dark
+        justify-content: center
+        &:hover
+            color: $white
+            background: $ecs_blue
+    .active_pag
+        color: $white
+        background: $ecs_blue
+.customers
+    display: flex
+    padding: 60px 0
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+    .customersContent
+        @include box(4, $white, 40px, 10px)
+        box-shadow: 2px 3px 10px $ecs_gray
+        padding: 20px
+        @include breakpoint($screen_xlarge)
+            @include box(6, $white, 10px, 10px)
+        @include breakpoint($screen_medium)
+            @include box(12, $white, 10px, 10px)
+        figure
+            gap: 10px
+            width: 100%
+            display: flex
+            position: relative
+            align-items: center
+            justify-content: flex-start
+            &::before
+                top: 10px
+                right: 10px
+                content: ''
+                font-size: 2.5em
+                position: absolute
+                color: $ecs_blue_sky
+            img
+                object-fit: cover
+                @include round_content(80px, true)
+            figcaption
+                p
+                    text-transform: capitalize
+                .nameCustomers
+                    font-size: .9em
+                    font-weight: 900
+                .skillsCustomers
+                    font-size: .7em
+                    font-weight: 100
+                    @include breakpoint($screen_medium)
+                        margin-top: 0
+        p
+            font-size: .9em
+            font-weight: 300
+            margin-top: 10px
+.collaborators
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    figure
+        @include box(2.5, $white, 55px, 10px)
+        padding: 0
+        box-shadow: 2px 3px 10px $ecs_gray
+        @include breakpoint($screen_medium)
+            @include box(12, $white, 10px, 10px)
+        img
+            width: 100%
+            height: 250px
+            object-fit: cover
+            @include breakpoint($screen_medium)
+                height: 300px
+        figcaption
+            width: 100%
+            padding: 15px
+            .jobPosition,
+            .nameCollaborators
+                font-size: .9em
+                font-weight: 700
+                text-transform: capitalize
+            .jobPosition
+                font-size: .8em
+                font-weight: 100
+.terms
+    .termsContent
+        padding: 30px 100px 50px 100px
+        @include breakpoint($screen_xlarge)
+            padding: 30px 10px 50px
+        h3
+            margin: 25px 0 15px 0
+            color: $ecs_gray
+            font-size: 1.2em
+            font-weight: 700
+            text-transform: capitalize
+        p
+            font-size: 1em
+            font-weight: 100
+            line-height: 1.5
+    .bTerms
+        height: 40vh
+        background: $ecs_blue
+        h2
+            color: $white
+            font-weight: 900
+            font-size: 1.5em
+            padding-top: 155px
+            text-align: center
+            text-transform: capitalize
+        p
+            font-size: .9em
+            font-weight: 700
+            color: $ecs_gray
+            text-align: center
+.ajax_load
+    display: none
+.berror
+    height: 30vh
+    background: $ecs_blue
+    p,
+    h2
+        display: none
+.not_found
+    width: 100%
+    height: 60vh
+    display: flex
+    align-items: center
+    justify-content: center
+    .content
+        width: 100%
+        height: 100%
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        .error
+            font-size: 6em
+            text-align: center
+            font-weight: 900
+            color: $ecs_gray
+        h1
+            font-size: 2em
+            color: $ecs_blue
+            font-weight: 900
+            text-align: center
+        p
+            font-weight: 100
+            font-size: 1.1em
+            margin: 0 0 15px 0
+        header
+            text-align: center
+            a
+                margin-top: 10px
+a.gflag
+    vertical-align: middle
+    font-size: 12px
+    padding: 1px 0
+    background-repeat: no-repeat
+    // background-image:url(gtranslate.net/flags/16.png)
+a
+    .gflag
+        &:hover
+           //background-image:url(gtranslate.net/flags/16a.png) 
+        img
+            border: 0
+
+#goog-gt-tt
+    display: none !important
+
+.goog-te-banner-frame
+    display: none !important
+
+.goog-te-menu-value
+    &:hover
+        text-decoration: none !important
+body
+    top: 0 !important
+
+#google_translate_element2
+    display: none!important
+
+//animation
+[data-anime]
+    opacity: 0
+    transition: all 0.3s ease-in-out
+[data-anime="top"]
+    transform: translate3d(0, -100px,0)
+[data-anime="right"]
+    transform: translate3d(100px, 0, 0)
+[data-anime="left"]
+    transform: translate3d(-100px, 0, 0)
+[data-anime="bottom"]
+    transform: translate3d(0, 100px, 0)
+[data-anime="opacity"]
+    opacity: 0
+.anime
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+    transition: all 0.3s ease-in-out
+.preloader
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 1010
+    height: 100vh
+    display: flex
+    position: fixed
+    background: $white
+    align-items: center
+    justify-content: center
+    img
+        width: 190px
+        height: 250px
+.disppear
+    animation: load 1s forwards
+@keyframes load
+    100%
+        opacity: 0
+        visibility: hidden

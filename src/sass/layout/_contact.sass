@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.contact
+    .bContact
+        height: 65vh
+        position: relative
+        @include background_image('contacto.webp')
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 60% 85%, 55% 100%, 0 100%)
+        &::before
+            width: 50%
+            height: 150px
+            display: flex
+            font-size: 3em
+            font-weight: 900
+            color: transparent
+            position: absolute
+            align-items: center
+            content: "Contactos"
+            left: calc(50% - 25%)
+            top: calc( 50% - 75px )
+            justify-content: center
+            -webkit-text-stroke: 2px $ecs_light_gray
+        &::after
+            top: 0
+            left: 0
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            z-index: $index_small
+            background: #00000041    
+        p,
+        h2
+            display: none
+        .bannerContainer
+            display: none
+    .contactForm
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        @include breakpoint($screen_large)
+            justify-content: space-between
+        .mapContact
+            height: 450px
+            @include box(12, transparent, 10px, 10px)
+        .address
+            @include box(5, transparent, 10px, 10px)
+            @include breakpoint($screen_large)
+                @include box(6, transparent, 10px, 10px)
+            @include breakpoint($screen_xlarge)
+                @include box(12, transparent, 10px, 10px)

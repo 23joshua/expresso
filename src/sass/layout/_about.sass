@@ -1,0 +1,483 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.about
+    .bServices
+        height: 85vh
+        position: relative
+        @include background_image('bgAbout.jpeg')
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 60% 85%, 55% 100%, 0 100%)
+        @include breakpoint($screen_extral_large)
+            height: 39vh
+        @include breakpoint($screen_medium)
+            height: 60vh
+        &::after
+            top: 0
+            left: 0
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            z-index: $index_small
+            background: rgba(0, 0, 0, .4)
+        p,
+        h2
+            display: none
+        &::before
+            width: 50%
+            height: 150px
+            display: flex
+            font-size: 3em
+            font-weight: 900
+            color: transparent
+            position: absolute
+            align-items: center
+            content: "Sobre nós"
+            left: calc(50% - 25%)
+            top: calc( 50% - 75px )
+            justify-content: center
+            -webkit-text-stroke: 2px $ecs_light_gray
+            @include breakpoint($screen_medium)
+                font-size: 2em
+                width: 100%
+                left: 0
+    .aboutContainer
+        display: flex
+        padding: 20px 0
+        flex-wrap: wrap
+        overflow: hidden
+        position: relative
+        justify-content: space-between
+        .ul-about
+            width: 70%
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            @include breakpoint($screen_extral_large)
+                width: 100%
+            li
+                width: 50%
+                display: flex
+                flex-wrap: wrap
+                margin: 20px 0
+                align-items: flex-start
+                justify-content: flex-start
+                @include breakpoint($screen_xlarge)
+                    justify-content: center
+                @include breakpoint($screen_medium)
+                    width: 100%
+                    align-items: center
+                    justify-content: center
+                h3
+                    width: 100%
+                    text-align: center
+                    font-size: 1.2em
+                    color: $ecs_blue
+                    margin-bottom: 5px
+                    text-transform: capitalize
+                p
+                    width: 80%
+                    text-align: left
+                    font-weight: 100
+                    line-height: 1.5
+                    font-size: .875em
+                    @include breakpoint($screen_medium)
+                        text-align: left
+                span
+                    font-size: 3em
+                    margin-right: 10px
+                    text-align: center
+                    color: $ecs_blue_sky
+                ul
+                    width: 100%
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    li
+                        width: 100%
+                        display: none
+                        font-weight: 100
+                        line-height: 1.5
+                        font-size: .875em
+                    .li-politics
+                        display: block !important
+            .li-history
+                width: 100%
+                justify-content: flex-start
+                h2
+                    font-size: 2em
+                    color: $ecs_blue
+                    position: relative
+                    margin-bottom: 20px
+                    text-transform: lowercase
+                    &::first-letter
+                        text-transform: capitalize
+                    &::after
+                        left: 0
+                        content: ''
+                        width: 60px
+                        height: 6px
+                        bottom: -13px
+                        position: absolute
+                        background-color: $ecs_blue
+                    &::before
+                        left: 0
+                        content: ''
+                        height: 1px
+                        width: 500px
+                        bottom: -10px
+                        position: absolute
+                        background-color: $ecs_gray
+                    strong
+                        color: $ecs_gray
+                        text-transform: uppercase
+                p
+                    font-size: 1em
+                    margin-top: 7px
+                    text-align: left
+                    line-height: 1.3
+                    font-weight: 100
+                    padding-right: 20px
+                    &::first-letter
+                        color: $ecs_blue
+                        font-size: 2em
+                        font-weight: bold
+                        text-transform: capitalize
+                    @include breakpoint($screen_extral_large)
+                        width: 100%
+                        padding-right: 0
+                        text-align: center
+        .photo-about
+            right: 0
+            width: 30%
+            height: 600px
+            bottom: 227px
+            position: absolute
+            @include breakpoint($screen_extral_large)
+                right: calc(50% - 25%)
+                width: 50%
+                height: 500px
+                bottom: 310px
+            @include breakpoint($screen_large)
+                bottom: 425px
+            @include breakpoint($screen_xlarge)
+                bottom: 444px
+            @include breakpoint($screen_medium)
+                bottom: 554px
+            @include breakpoint($screen_small)
+                bottom: 553px
+            @include breakpoint($screen_xsmall)
+                bottom: 617px
+            img
+                object-fit: fill
+                object-position: center
+        .ul-vision
+            z-index: 2
+            width: 100%
+            display: flex
+            padding: 30px
+            flex-wrap: wrap
+            margin-top: 20px
+            align-items: center
+            @include round(10px)
+            background-color: $ecs_blue
+            justify-content: space-between
+            @include breakpoint($screen_extral_large)
+                margin-top: 500px
+                margin-bottom: 60px
+                justify-content: center
+            li
+                width: 30%
+                color: $white
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                justify-content: center
+                @include breakpoint($screen_large)
+                    width: 50%
+                @include breakpoint($screen_medium)
+                    width: 100%
+                h3
+                    width: 100%
+                    font-size: 1.2em
+                    text-align: center
+                    margin-bottom: 10px
+                    color: $ecs_blue_dark
+                    text-transform: capitalize
+                span
+                    font-size: 2em
+                p
+                    font-weight: 100
+                    line-height: 1.5
+                    font-size: .875em
+                    text-align: center
+                    margin-bottom: 10px
+.aboutNumber
+    width: 100%
+    margin: 50px 0
+    @include breakpoint($screen_large)
+        margin-top: -88px
+    .ulNumber
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        position: relative
+        align-items: center
+        justify-content: center
+        &::after
+            content: ''
+            width: 100%
+            height: 2px
+            top: 570px
+            position: absolute
+            background: $ecs_blue_dark
+        @include breakpoint($screen_xmedium)
+            margin-bottom: 80px
+            &::after
+                top: 454px
+        @include breakpoint($screen_small)
+            &::before
+                top: 130px
+                box-shadow: 0 306px 0 $ecs_blue_dark
+            &::after
+                top: 756px
+                box-shadow: 0 306px 0 $ecs_blue_dark
+        &::before
+            top: 72px
+            content: ''
+            width: 100%
+            height: 2px
+            position: absolute
+            background: $ecs_blue_dark
+            @include breakpoint($screen_large)
+                top: 161px
+            @include breakpoint($screen_xlarge)
+                top: 175px
+            @include breakpoint($screen_xmedium)
+                top: 148px
+        li
+            display: flex
+            margin: 0px 20px
+            font-weight: 900
+            font-size: 1.7em
+            position: relative
+            align-items: center
+            color: $ecs_gray_dark
+            background: $ecs_blue
+            justify-content: center
+            z-index: $index_medium
+            @include round_content(140px, true)
+            @include breakpoint($screen_large)
+                margin: 90px 20px
+            @include breakpoint($screen_xmedium)
+                margin-top: 75px
+            &::before
+                content: ''
+                position: absolute
+                background: $white
+                z-index: $index_xsmall
+                top: calc( 50% - 60px)
+                left: calc(50% - 60px)
+                @include round_content(120px, true)
+        .liBox1
+            &::after
+                content: ''
+                width: 2px
+                height: 110px
+                bottom: -109px
+                position: absolute
+                left: calc(50% - 1px)
+                z-index: $index_xsmall
+                background: $ecs_blue_dark
+            h6,
+            p
+                position: absolute
+            h6
+                left: -81px
+                width: 140px
+                bottom: -49px
+                font-size: .7em
+                font-weight: 900
+                text-align: right
+                padding-right: 5px
+                color: $ecs_gray_dark
+                text-transform: capitalize
+                @include breakpoint($screen_large)
+                    left: -87px
+                    bottom: -47px
+            p
+                left: 85px
+                width: 110px
+                bottom: -87px
+                font-size: .4em
+                font-weight: 700
+                text-align: left
+                @include breakpoint($screen_large)
+                    left: 93px
+                    bottom: -73px
+            .liText1
+                bottom: -49px
+                position: absolute
+                border: 2px solid $ecs_blue_dark
+                @include round_content(26px, true)
+                &::before
+                    content: ''
+                    width: 16px
+                    height: 16px
+                    position: absolute
+                    top: calc(50% - 11px)
+                    left: calc(50% - 11px)
+                    background: $ecs_blue
+                    border: 3px solid $white
+                    @include round(50px)
+        .liBox2
+            &::after
+                content: ''
+                width: 2px
+                height: 210px
+                bottom: -209px
+                position: absolute
+                left: calc(50% - 1px)
+                z-index: $index_xsmall
+                background: $ecs_blue_dark
+            h6,
+            p
+                position: absolute
+            h6
+                left: -101px
+                width: 160px
+                bottom: -130px
+                font-size: .7em
+                font-weight: 900
+                text-align: right
+                padding-right: 5px
+                color: $ecs_gray_dark
+                text-transform: capitalize
+                @include breakpoint($screen_large)
+                    left: -108px
+                    bottom: -108px
+            p
+                left: 85px
+                width: 110px
+                bottom: -168px
+                font-size: .4em
+                font-weight: 700
+                text-align: left
+                @include breakpoint($screen_large)
+                    left: 93px
+                    bottom: -150px
+            .liText2
+                bottom: -129px
+                position: absolute
+                border: 2px solid $ecs_blue_dark
+                @include round_content(26px, true)
+                &::before
+                    content: ''
+                    width: 16px
+                    height: 16px
+                    position: absolute
+                    top: calc(50% - 11px)
+                    left: calc(50% - 11px)
+                    background: $ecs_blue
+                    border: 3px solid $white
+                    @include round(50px)
+        // .li1
+        //     @include breakpoint($screen_medium)
+        //         margin-top: -450px
+        // .li2
+        //     @include breakpoint($screen_medium)
+        //         margin-top: 450px
+        // .li2
+        //     @include breakpoint($screen_medium)
+        //         margin-top: 550px
+        // .li4
+        //     @include breakpoint($screen_medium)
+        //         margin-top: 650px
+.videoAbout
+    width: 100%
+    height: 500px
+    display: flex
+    margin-top: 270px
+    position: relative
+    align-items: center
+    margin-bottom: 40px
+    justify-content: center
+    @include background_image('home.webp')
+    background-attachment: fixed
+    @include breakpoint($screen_large)
+        margin-top: 133px
+    .embed
+        height: 0
+        width: 100%
+        margin: 0 auto
+        max-width: 100%
+        overflow: hidden
+        position: relative
+        transition: all 0.5s ease-in-out
+        iframe
+            width: 560px
+            height: 315px
+            position: absolute
+            left: calc(50% - 280px)
+            top: calc(50% - 162.5px)
+            @include breakpoint($screen_medium)
+                width: 95%
+                height: 60%
+                top: calc(50% - 30%)
+                left: calc(50% - 47.5%)
+    .active_embed
+        height: 100%
+        z-index: $index_small
+        transform-origin: center
+        transition: all 0.5s ease-in-out
+    h2
+        top: 50px
+        color: $white
+        font-size: 2.5em
+        font-weight: 100
+        text-align: center
+        position: absolute
+        text-transform: capitalize
+        @include breakpoint($screen_medium)
+            top: 20px
+            font-size: 1.8em
+        @include breakpoint($screen_xsmall)
+            font-size: 1.5em
+    .btn_close
+        top: 10px
+        z-index: 2
+        right: 315px
+        cursor: pointer
+        color: $ecs_blue
+        font-size: 1.2em
+        position: absolute
+        background: transparent
+        border: 5px solid $white
+        transition: all 0.5s ease-in-out
+        @include round_content(35px, true)
+        &:hover,
+        &:active
+            color: $white
+            border: 10px solid $orange
+            transition: all 0.5s ease-in-out
+        @include breakpoint($screen_large)
+            right: 20px
+    .btn_open
+        display: flex
+        font-size: 2em
+        cursor: pointer
+        color: $ecs_blue
+        position: absolute
+        align-items: center
+        top: calc(50% - 40px)
+        left: calc(50% - 40px)
+        justify-content: center
+        background: transparent
+        border: 10px solid $white
+        transition: all 0.5s ease-in-out
+        @include round_content(80px, true)
+        &:hover
+            border: 10px solid $ecs_blue
+            transition: all 0.5s ease-in-out
+            color: $white

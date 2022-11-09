@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.address
+    width: 100%
+    display: block
+    .box-addr
+        width: 100%
+        display: grid
+        font-size: .8em
+        padding: 7px
+        margin: 10px 0px
+        background: $white
+        @include round(7px)
+        box-shadow: 4px 7px 15px #aaa
+        grid-template-columns: 20% 80%
+        grid-template-rows: 25px 35px
+        a
+            color: $ecs_blue
+            grid-area: 1 / 1 / 3 / 2
+        .icon
+            font-size: 1.7em
+        span
+            color: $ecs_blue
+            font-weight: 500
+            font-size: 1.3em
+            text-transform: capitalize
+            grid-area: 1 / 2 / 2 / 3
+            @include breakpoint($screen_extral_large)
+                font-size: 1.1em
+        p
+            font-size: 1em
+            font-weight: 200
+            line-height: 1.5em
+            text-transform: lowercase
+            grid-area: 2 / 2 / 3 / 3
+            @include breakpoint($screen_extral_large)
+                font-size: .9em
+                line-height: 1em

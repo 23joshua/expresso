@@ -1,0 +1,218 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.service
+    .bServices
+        width: 100% !important
+        height: 65vh
+        position: relative
+        @include background_image('servico.webp')
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 60% 85%, 55% 100%, 0 100%)
+        background-image: hidden
+        &::after
+            top: 0
+            left: 0
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            z-index: $index_small
+            background: #00000041
+        p,
+        h2
+            display: none
+        &::before
+            width: 50%
+            height: 150px
+            display: flex
+            font-size: 3em
+            font-weight: 900
+            color: transparent
+            position: absolute
+            align-items: center
+            content: "Serviços"
+            left: calc(50% - 25%)
+            top: calc( 50% - 75px )
+            justify-content: center
+            -webkit-text-stroke: 2px $ecs_light_gray
+        .bannerContainer
+            display: none
+.serviceContainer
+    display: flex
+    padding: 20px
+    overflow: hidden
+    margin-top: 50px
+    overflow: hidden
+    position: relative
+    justify-content: space-between
+    box-shadow: -3px 0px 5px 3px $ecs_gray
+    .serviceContent
+        top: 0
+        display: flex
+        flex-wrap: wrap
+        position: absolute
+        transform: translateX(140%)
+        justify-content: space-between
+        transition: all 0.5s ease-in-out
+        @include box(12, $white, 0px, 0px)
+        figure
+            width: 40%
+            height: 250px
+            position: relative
+            @include breakpoint($screen_extral_large)
+                width: 45%
+            @include breakpoint($screen_large)
+                width: 100%
+            img
+                right: 0
+                width: 100%
+                height: 100%
+                position: absolute
+                object-fit: initial
+                top: calc(50% - 50px)
+                @include breakpoint($screen_medium)
+                    top: 0
+        .serviceText
+            width: 60%
+            @include breakpoint($screen_extral_large)
+                width: 55%
+            @include breakpoint($screen_large)
+                width: 100%
+            header
+                width: 100%
+                display: flex
+                padding: 20px 0
+                align-items: center
+                justify-content: flex-start
+                h2
+                    color: $ecs_blue
+                    font-size: 2em
+                    line-height: 20px
+                    text-transform: capitalize
+                    @include breakpoint($screen_medium)
+                        font-size: 1.5em
+            p
+                margin-top: 15px
+                color: $ecs_gray
+                font-size: 1.1em
+                font-weight: 100
+                padding-right: 0px
+                @include breakpoint($screen_extral_large)
+                    padding-right: 20px
+                @include breakpoint($screen_large)
+                    margin-top: 0px
+                    padding-right: 0
+            footer
+                gap: 20px
+                width: 100%
+                display: flex
+                flex-wrap: wrap
+                padding-top: 50px
+                align-items: center
+                background: transparent
+                align-content: flex-start
+                justify-content: flex-start
+                @include breakpoint($screen_xlarge)
+                    justify-content: center
+                div
+                    display: flex
+                    flex-wrap: wrap
+                    font-size: 1em
+                    font-weight: 300
+                    position: relative
+                    align-items: center
+                    align-content: center
+                    flex-direction: column
+                    justify-content: center
+                    @include round_content(70px, true)
+                    &::before
+                        content: ''
+                        width: 50px
+                        height: 50px
+                        position: absolute
+                        border-width: 10px
+                        border-style: solid
+                        @include round(50px)
+                        transform: rotate(-60deg)
+                        border-color: transparent transparent $white transparent
+                    &:after
+                        content: ''
+                        width: 50px
+                        height: 50px
+                        position: absolute
+                        border-width: 10px
+                        border-style: solid
+                        @include round(50px)
+                        transform: rotate(-60deg)
+                        border-color: $ecs_blue_sky $ecs_blue_sky transparent $ecs_blue_sky
+                    span
+                        font-size: .385em
+                        font-weight: 900
+                        text-transform: uppercase
+    .active_serviceContent
+        transform: translateX(0)
+    .s_active
+        transform: translateX(34%)
+        transition: all 0.5s ease-in-out
+        @include breakpoint($screen_large)
+            top: 160px
+            transform: translateX(0)
+            @include box(12, $ecs_blue_light, 0px, 5px)
+            padding-right: 20px
+        @include breakpoint($screen_medium)
+            top: 230px
+    .ul-service
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        margin-top: 350px
+        align-items: center
+        justify-content: center
+        padding: 30px 20px 25px 20px
+        @include breakpoint($screen_extral_large)
+            margin-top: 380px
+        @include breakpoint($screen_extral_large)
+            margin-top: 547px
+        @include breakpoint($screen_medium)
+            margin-top: 770px
+        li
+            display: flex
+            cursor: pointer
+            flex-wrap: wrap
+            position: relative
+            padding: 10px 5px
+            align-items: center
+            justify-content: center
+            transition: all .3s ease-in-out
+            &:hover
+                img
+                    width: 50px
+                    height: 50px
+                span
+                    bottom: 70px
+                    font-size: .5em
+                    display: inline-block
+                    transition: all .3s ease-in-out
+            img
+                width: 30px
+                height: 30px
+                transition: all .5s ease-in-out
+            span
+                width: 100px
+                bottom: -17px
+                display: none
+                font-size: .6em
+                font-weight: 600
+                position: absolute
+                text-align: center
+                transition: all .3s ease-in-out
+        .li_active
+            transition: all .5s ease-in-out
+            img
+                width: 50px
+                height: 50px
+                transition: all .5s ease-in-out
+            span
+                color: $ecs_blue
+                display: inline-block

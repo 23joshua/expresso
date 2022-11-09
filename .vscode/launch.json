@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://faq_active",
+            "request": "launch",
+            "url": "http://faq_active"
+        }
+    ]
+}

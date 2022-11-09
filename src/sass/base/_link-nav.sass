@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.a_link
+    cursor: pointer
+    font-size: 12pt
+    text-align: left
+    color: transparent
+    position: relative
+    text-transform: uppercase
+    transition: color 1s ease
+    -webkit-text-stroke: 1px rgb(152, 152, 152)
+    &:before
+        width: 0%
+        color: $blue_light
+        overflow: hidden
+        position: absolute
+        transition: width 1s
+        content: attr(data-text)
+        -webkit-text-stroke: 1px $blue_light
+    &:hover
+        &::before
+            width: 100%
+            border-right: 2px solid $blue_light
+            filter: drop-shadow(0 0 25px $blue_light)
+.link_active
+    color: $blue_light
+    position: relative
+    &::after
+        left: 0
+        top: 90%
+        content: ''
+        width: 100%
+        height: 2px
+        background: $blue_light
+        position: absolute
