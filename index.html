@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/Logo-trans.webp" type="image/png">
+    <link rel="shortcut icon" href="assets/img/icon-logo.png" type="image/png">
     <link href="https://file.myfontastic.com/UuzaHAs8H8DwrS8SY8hPt9/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Expresso Carga & Serviços</title>
@@ -28,66 +28,338 @@
         </div>
         <div class="h-cont-soc">
             <div class="h-contact">
-                <p class="h-spanCont"><span class="icon icon-phone"></span> (+258) 82 12 25 892</p>
+                <p class="h-spanCont"><span class="icon icon-call-phone"></span> (+258) 82 12 25 892</p>
                 <p class=" h-spanEmail"><span class="icon icon-envelope-o"></span> geral@ecs.co.mz</p>
-                <p class="h-spanHours"><span class="icon icon-clock-o"></span> Aberto das 08 : 00 às 17 : 30</p>
+                <p class="h-spanHours"><span class="icon icon-android-time"></span> Aberto das 08 : 00 às 17 : 30</p>
             </div>
             <div class="social">
                 <a class="icon icon-earth btn_lang">
                     <select onchange="doGTranslate(this);">
-                        <option value="pt|en">
-                            <a href="#" onclick="doGTranslate('pt|en');return false;" title="English"
-                                class="gflag nturl" style="background-position:-0px -0px;">
-                                <img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="English" />
-                            </a>
-                        </option>
                         <option value="pt|pt">Pt</option>
+                        <option value="pt|en">Eng</option>
                     </select>
                     <div id="google_translate_element2"></div>
                 </a>
-                <a href=""
-                    title="Expresso Carga & Serviços Facebook" target="_blank" class="icon icon-facebook-square"></a>
-                <a href=""
-                    title="Expresso Carga & Serviços Instagram" target="_blank" class="icon icon-instagram"></a>
-                <a href=""
-                    title="Expresso Carga & Serviços Linkedin" target="_blank" class="icon icon-linkedin"></a>
+                <a href="https://www.facebook.com/" title="Expresso Carga & Serviços Facebook" target="_blank"
+                    class="icon icon-facebook-square"></a>
+                <a href="" title="instagram" target="_blank" class="icon icon-instagram"></a>
+                <a href="" title="linkedin" target="_blank" class="icon icon-linkedin"></a>
             </div>
         </div>
         <nav class="nav">
             <a href="./" title="home" class="a-nav">inicio</a>
-            <a href="?file=about" title="sobre nós" class="a-nav">sobre nós</a>
-            <a href="?file=services" title="serviços" class="a-nav">serviços</a>
-            <a href="?file=blog" title="blog" class="a-nav">blog</a>
-            <a href="?file=contacte" title="contactos" class="a-nav">contactos</a>
+            <a href="about.html" title="sobre nós" class="a-nav">sobre nós</a>
+            <a href="services.html" title="serviços" class="a-nav">serviços</a>
+            <a href="blog.html" title="blog" class="a-nav">blog</a>
+            <a href="contacte.html" title="contactos" class="a-nav">contactos</a>
         </nav>
     </header>
 
     <main class=" main">
-        <?php
+        <article class="banner">
+            <div class="bannerContainer container">
+                <div class="boxContent">
+                    <header class="headerContent">
+                        <h1>Expresso carga & serviços</h1>
+                        <p>faça parte da nossa grande familia ECS</p>
+                    </header>
+                    <p class="text">oferecemos os melhores serviços de correios expresso no pais!</p>
+                    <a href="?file=about" class="btn btn_ecs">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        sobre nós
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article class="aboutHome container">
+            <figure data-anime="top">
+                <img src="assets/img/bgAbout.jpeg" alt="sobre nós">
+                <figcaption>
+                    <h3>14</h3>
+                    <p>anos</p>
+                </figcaption>
+            </figure>
+            <header data-anime="right">
+                <h2>sobre nós</h2>
+                <p>por sí chegamos mais longe</p>
+            </header>
+            <div class="aboutContent" data-anime="right">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem mollitia distinctio veniam? Unde
+                    architecto repellendus facilis omnis explicabo quia accusantium sunt quam, tempore obcaecati cumque
+                    maiores
+                    blanditiis quis aliquam odio?</p>
+                <div class="aboutValue">
+                    <div class="vAbout active_vAbout">
+                        <h3>valor</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum maxime laborum perspiciatis nisi
+                            laudantium sed officiis, sequi sint dolor quo nihil magnam esse optio, incidunt perferendis hic.
+                            Nihil, pariatur?</p>
+                    </div>
+                    <div class="vAbout">
+                        <h3>visão</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum maxime laborum perspiciatis nisi
+                            laudantium sed officiis, sequi sint dolor quo nihil magnam esse optio, incidunt perferendis hic.
+                            Nihil, pariatur?</p>
+                    </div>
+                    <div class="vAbout">
+                        <h3>missão</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum maxime laborum perspiciatis nisi
+                            laudantium sed officiis, sequi sint dolor quo nihil magnam esse optio, incidunt perferendis hic.
+                            Nihil, pariatur?</p>
+                    </div>
+                </div>
+                <p class="assinatura">assinatura</p>
+                <a href="?file=about" class="btn btn_ecs">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    sobre nós
+                </a>
+            </div>
+        </article>
+        <section class="contentService container">
+            <div class="serviceIcon">
+                <figure data-anime="left">
+                    <img src="assets/img/logistics.webp" alt="carro de entregas">
+                </figure>
+                <figure data-anime="top">
+                    <img src="assets/img/worldwide-shipping.webp" alt="serviços rápidos">
+                </figure>
+                <figure data-anime="right">
+                    <img src="assets/img/delivery-man.webp" alt="caixas de entrega">
+                </figure>
+            </div>
+            <header class="headerContent" data-anime="opacity">
+                <h2>nossos serviços</h2>
+                <p>Nós trazemos o mundo até a sua porta, do pedido ao destino.</p>
+            </header>
+            <article class="cardService">
+    <header>
+        <h3>Envios Internacionais</h3>
+        <div>
+            <p>1</p>
+        </div>
+    </header>
+    <figure>
+        <img src="<?= theme("assets/img/flight.webp"); ?>" alt="cargas aéreos">
+    </figure>
+    <div class="cardContent">
+        <p>No serviço de Correio Expresso oferecemos soluções porta à porta para documentos e/ou pacotes que precisam
+            ser entregues em cidades capitais ou distritos do território nacional e internacional com rapidez. </p>
+    </div>
+</article>
 
-        $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_SPECIAL_CHARS);
+<article class="cardService">
+    <header>
+        <h3>correio expresso</h3>
+        <div>
+            <p>2</p>
+        </div>
+    </header>
+    <figure>
+        <img src="<?= theme("assets/img/fast-delivery.webp"); ?>" alt="correio expresso">
+    </figure>
+    <div class="cardContent">
+        <p>No serviço de Correio Expresso oferecemos soluções porta à porta para documentos e/ou pacotes que precisam
+            ser entregues em cidades capitais ou distritos do território nacional e internacional com rapidez. </p>
+    </div>
+</article>
 
-        if (empty("$file")) {
-            require __DIR__ . "/views/home.php";
-        } elseif ($file && file_exists(__DIR__ . "/views/{$file}.php")) {
-            require __DIR__ . "/views/{$file}.php";
-        } else {
-            require __DIR__ . "/views/404.php";
-        }
+<article class="cardService">
+    <header>
+        <h3>Projectos Especiais</h3>
+        <div>
+            <p>3</p>
+        </div>
+    </header>
+    <figure>
+        <img src="<?= theme("assets/img/box.webp"); ?>" alt="agrupamento de carga">
+    </figure>
+    <div class="cardContent">
+        <p>É um serviço de logística, adaptável as necessidades específicas do cliente, de qualquer ramo de actividade,
+            com acompanhamento contínuo prestado por uma equipa de profissionais e um gestor da EXPRESSO CARGA E
+            SERVIÇOS.</p>
+    </div>
+</article>
+            <br>
+            <a href="?file=about" class="btn btn_ecs">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                saiba mais
+            </a>
+        </section>
 
-        require __DIR__ . "/views/newsletter.php";
-        require __DIR__ . "/views/client.php";
-        ?>
+        <?php require __DIR__ . "/quotation.php"; ?>
+
+        <section class="whoUs container" data-anime="right">
+            <header class="headerContent">
+                <h2>porque nos escolher?</h2>
+                <p>prestamos o melhor serviço de correio expresso no pais!</p>
+            </header>
+            <article class="us active_us" data-item="quality" data-anime="left">
+                <header>
+                    <h3>Qualidade</h3>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, a.</p>
+            </article>
+            <article class="us" data-item="experience">
+                <header>
+                    <h3>experiência</h3>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, a.</p>
+            </article>
+            <article class="us" data-item="speed">
+                <header>
+                    <h3>entregas rápidas</h3>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, a.</p>
+            </article>
+            <article class="us" data-item="personalDelivery">
+                <header>
+                    <h3>entrega personalizadas</h3>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, a.</p>
+            </article>
+            <aside class="asideWhoUs" data-anime="right">
+                <div class="boxAsideUS" data-filter="speed">
+                    <figure><img src="assets/img/rocket.webp" alt="entregas rápidas"></figure>
+                    <h5>entregas rápidas</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="boxAsideUS" data-filter="personalDelivery">
+                    <figure><img src="assets/img/handshake.webp" alt="entregas personalizadas"></figure>
+                    <h5>entregas personalizadas</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="boxAsideUS" data-filter="experience">
+                    <figure><img src="assets/img/testimonials.webp" alt="experiência"></figure>
+                    <h5>experiência</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="boxAsideUS active_boxAsideUS" data-filter="quality">
+                    <figure><img src="assets/img/high-quality.webp" alt="qualidade"></figure>
+                    <h5>qualidade</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+
+            </aside>
+        </section>
+
+        <section class=" article container">
+            <header class="headerContent">
+                <h2>blog</h2>
+                <p>fique por dentro das novidades do nossos blog</p>
+            </header>
+            <div class="blogArticle blogArticleHome" data-anime="left">
+                <article class="blogPost">
+                    <header>
+                        <figure>
+                            <img src="assets/img/blog-post.jpeg" alt="">
+                            <figcaption>
+                                <p class="autor"><span>Autor:</span> Joshua Shony</p>
+                                <p class="category"><span>Categoria:</span> Envio</p>
+                            </figcaption>
+                        </figure>
+                        <h6>
+                            <span>6/02/2019 17h31</span>
+                        </h6>
+                        <h2><a href="?file=blog-post">Lorem ipsum dolor sit dolor sit amet consec.</a></h2>
+                    </header>
+                    <div class=" content">
+                        <p><a href="?file=blog-post">Lorem ipsum dolor sit amet consec dolor sit amet consec tetur adipi dolor sit amet
+                                consecsicing elit. Nihil,
+                                fugit!</a>
+                        </p>
+                        <a href="?file=blog-post" class="btn-blog">continuar...</a>
+                    </div>
+                </article>
+                <article class="blogPost">
+                    <header>
+                        <figure>
+                            <img src="assets/img/blog-post.jpeg" alt="">
+                            <figcaption>
+                                <p class="autor"><span>Autor:</span> Joshua Shony</p>
+                                <p class="category"><span>Categoria:</span> Envio</p>
+                            </figcaption>
+                        </figure>
+                        <h6>
+                            <span>6/02/2019 17h31</span>
+                        </h6>
+                        <h2><a href="?file=blog-post">Lorem ipsum dolor sit dolor sit amet consec.</a></h2>
+                    </header>
+                    <div class=" content">
+                        <p><a href="?file=blog-post">Lorem ipsum dolor sit amet consec dolor sit amet consec tetur adipi dolor sit amet
+                                consecsicing elit. Nihil,
+                                fugit!</a>
+                        </p>
+                        <a href="?file=blog-post" class="btn-blog">continuar...</a>
+                    </div>
+                </article>
+                <article class="blogPost">
+                    <header>
+                        <figure>
+                            <img src="assets/img/blog-post.jpeg" alt="">
+                            <figcaption>
+                                <p class="autor"><span>Autor:</span> Joshua Shony</p>
+                                <p class="category"><span>Categoria:</span> Envio</p>
+                            </figcaption>
+                        </figure>
+                        <h6>
+                            <span>6/02/2019 17h31</span>
+                        </h6>
+                        <h2><a href="?file=blog-post">Lorem ipsum dolor sit dolor sit amet consec.</a></h2>
+                    </header>
+                    <div class=" content">
+                        <p><a href="?file=blog-post">Lorem ipsum dolor sit amet consec dolor sit amet consec tetur adipi dolor sit amet
+                                consecsicing elit. Nihil,
+                                fugit!</a>
+                        </p>
+                        <a href="?file=blog-post" class="btn-blog">continuar...</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <article class="news container" data-anime="top">
+            <header class="headerContent">
+                <h2>newsletter</h2>
+                <p>Inscreva-Se Na Nossa Newsletter E Receba, Semanalmente, Conteúdo Exclusivo Sobre Gestão De Negócio, Promoções
+                    E Novidades Da <strong>ECS</strong> E Mais, Diretamente No Seu Site.</p>
+            </header>
+            <form action="" class="form a_form">
+                <p><input type="text" name="" id="" placeholder="seu nome"></p>
+                <p><input type="email" name="" id="" placeholder="@seumelhoremail.com"></p>
+                <button class="btn btn_ecs">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    enviar
+                </button>
+            </form>
+        </article>
+
+        <article class="client container">
+            <figure><img src="assets/img/luxo.webp" alt="logo da empresa luxo"></figure>
+            <figure><img src="assets/img/triana.webp" alt="logo da empresa triana"></figure>
+            <figure><img src="assets/img/topup.webp" alt="logo da empresa topup"></figure>
+            <figure><img src="assets/img/msph.webp" alt="logo da empresa msph"></figure>
+        </article>
     </main>
 
     <footer class="footer">
         <div class="footer-content container">
             <div class="footerLogo">
-                <a href="./"><img src="assets/img/Logo-trans.png" alt=""></a>
+                <a href="./"><img src="assets/img/logo-white.webp" alt=""></a>
                 <div class="social">
                     <a href="" title="Facebook" target="_blank" class="icon icon-facebook-square"></a>
                     <a href="" title="instagram" target="_blank" class="icon icon-instagram"></a>
-                    <a href="" title="linkedin" target="_blank" class="icon icon-linkedin-square"></a>
+                    <a href="" title="linkedin" target="_blank" class="icon icon-linkedin"></a>
                 </div>
             </div>
             <ul class="footer-menu">
